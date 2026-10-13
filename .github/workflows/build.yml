@@ -1,0 +1,10 @@
+name: Build Workflow
+run-name: ${{ github.actor }} builds images
+on: []
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v7
+      - run: docker compose build
