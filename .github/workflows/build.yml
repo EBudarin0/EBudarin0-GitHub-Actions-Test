@@ -1,6 +1,5 @@
 name: Build Workflow
 run-name: ${{ github.actor }} builds images
-on: []
 jobs:
   build-job:
     runs-on: ubuntu-latest
