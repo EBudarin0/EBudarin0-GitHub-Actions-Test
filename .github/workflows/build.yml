@@ -8,4 +8,4 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v7
       - run: docker compose build
-      - run: docker images | cat >> $GITHUB_STEP_SUMMARY
+      - run: docker save -o app.tar ebudarin0-github-actions-test-app
