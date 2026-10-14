@@ -18,7 +18,7 @@ services:
             - ssl_key
     app:
         build: ./app
-        ports:
+        expose:
             - 8000
 secrets:
     db_password:
