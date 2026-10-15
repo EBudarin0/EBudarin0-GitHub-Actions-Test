@@ -10,6 +10,6 @@ jobs:
       - name: Trigger webhook
         env:
           DEPLOY_WEBHOOK_HOST: ${{ secrets.DEPLOY_WEBHOOK_HOST }}
-          DEPLOY_WEBHOOK_HOST: ${{ secrets.DEPLOY_WEBHOOK_PORT }}
+          DEPLOY_WEBHOOK_PORT: ${{ secrets.DEPLOY_WEBHOOK_PORT }}
           DEPLOY_WEBHOOK_TOKEN: ${{ secrets.DEPLOY_WEBHOOK_TOKEN }}
         run: curl -H "Token: $DEPLOY_WEBHOOK_TOKEN" https://$DEPLOY_WEBHOOK_HOST:$DEPLOY_WEBHOOK_PORT/hooks/deploy
