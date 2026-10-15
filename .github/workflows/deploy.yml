@@ -1,0 +1,15 @@
+name: Deploy Workflow
+run-name: ${{ github.actor }} deploys
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger webhook
+        env:
+          DEPLOY_WEBHOOK_HOST: ${{ secrets.DEPLOY_WEBHOOK_HOST }}
+          DEPLOY_WEBHOOK_HOST: ${{ secrets.DEPLOY_WEBHOOK_PORT }}
+          DEPLOY_WEBHOOK_TOKEN: ${{ secrets.DEPLOY_WEBHOOK_TOKEN }}
+        run: curl -H "Token: $DEPLOY_WEBHOOK_TOKEN" https://$DEPLOY_WEBHOOK_HOST:$DEPLOY_WEBHOOK_PORT/hooks/deploy
